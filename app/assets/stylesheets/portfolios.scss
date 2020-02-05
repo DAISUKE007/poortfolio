@@ -1,0 +1,707 @@
+
+// 共有-----------------------------------------------------------------
+
+.font {
+  // font-family:"Libre Baskerville",serif;
+  font-family: "Noto Serif JP","YuMincho","Yu Mincho","游明朝体","ヒラギノ明朝 ProN","Hiragino Mincho ProN",serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.wrapper-title {
+  margin: 50px auto;
+  font-size: 32px;
+  letter-spacing: 13px;  //文字の間隔を指定
+}
+
+// --------------------------------------------------------------------
+
+.wrapper {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;  //paddingとboderを幅と高さを含める
+  background-color: whitesmoke;
+
+  .top__move__header {
+    position: fixed;  //スクロールしても位置が固定
+    z-index: 100;
+    height: 110px;
+    width: 100%;
+    background: linear-gradient(rgba(255, 255, 255, .9), rgba(255, 255, 255, .4), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    // 背景にグラデーションをつける（複数可）
+
+    .header__link {
+      position: fixed;  //スクロールしても位置が固定
+      z-index: 3;
+      right: 50px;
+      top: 40px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+
+      span {
+        display: block;
+        height: 30px;
+        width: 1px;
+        background: #505050;
+      }
+
+      &__item {
+        position: relative;
+        z-index: 5;
+        margin: 0 20px;
+        height: 100%;
+        text-align: center;
+        letter-spacing: 2.1px;
+        font-size: 13px;
+        cursor: pointer;
+        transition: all 0.5s;
+
+        a {
+          display: block;
+          height: 100%;
+          width: 100%;
+          padding: 26px 0 15px;
+
+          .fa {
+            font-size: 1rem;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 8px;
+          }
+        }
+      }
+
+      &__item:hover {
+        background: rgba(110, 110, 110, 0.3);
+      }
+    }
+  }
+
+  // --------------------------------------------------------------------
+
+  .top-wrapper {
+  
+    img {
+      width: 100%;
+      height: 100vh;
+      opacity: 0.5;
+      position: relative;
+    }
+
+    .top__section__text {
+      position: absolute;
+      top: 50vh;
+      margin-left: 10%;
+      padding: 10px;
+      
+      h1 {
+        font-size: 40px;
+        letter-spacing: 13px;  //文字の間隔を指定
+      }
+
+      p {
+        font-size: 16px;
+        letter-spacing: 5px;  //文字の間隔を指定
+        margin-top: 25px;
+      }
+    }
+  }
+
+  // --------------------------------------------------------------------
+
+  .introductio-wrapper {
+    background-color: whitesmoke;
+    width: 100%;
+    margin: 0 auto 50px;
+    text-align: center;
+
+    .profile {
+      display: inline-flex;
+
+
+      &__text-jp {
+        writing-mode: vertical-rl;
+        text-align: left;
+        padding: 20px;
+        display: block;
+
+        h3 {
+          line-height: 58px;  // *文字の x 2
+          font-size: 29px;
+          letter-spacing: 10px;  //文字の間隔を指定  *文字の1/3
+        }
+
+        p {
+          line-height: 36px;
+          font-size: 19px;
+          letter-spacing: 10px;  //文字の間隔を指定
+        }
+      }
+
+      &__box {
+        padding: 20px;
+      
+        &__image {
+          text-align: left;
+            height: 350px;
+
+          img {
+            height: 100%;
+          }
+        }
+
+        &__text-eng {
+          text-align: left;
+          padding-top: 20px;
+          font-size: 13px;
+          letter-spacing: 0.1rem;  //文字の間隔を指定
+          opacity: .5;
+
+          h3 {
+            line-height: 52px;
+          }
+
+          p {
+            line-height: 26px;
+          }
+        }
+      }
+    }
+  }
+
+  // --------------------------------------------------------------------
+
+  .proguramming-wrapper {
+    width: 100%;
+    text-align: center;
+
+    .proguramming {
+      display: inline-flex;
+      margin: 0 auto 50px;
+
+      &__image {
+        height: 470px;
+        padding: 20px;
+
+        img {
+          height: 100%;
+        }
+      }
+
+      .proguramming__text {
+        padding: 20px;
+
+        &__jp {
+          text-align: left;
+
+          h3 {
+            line-height: 58px;  // *文字の x 2
+            font-size: 29px;
+            letter-spacing: 10px;  //文字の間隔を指定
+          }
+
+          p {
+            line-height: 36px;
+            font-size: 19px;
+            letter-spacing: 10px;  //文字の間隔を指定
+          }
+        }
+
+        &__eng {
+          text-align: left;
+          padding-top: 20px;
+          font-size: 13px;
+          letter-spacing: 2px;  //文字の間隔を指定
+          opacity: .5;
+
+          h3 {
+            line-height: 52px;
+          }
+
+          p {
+            line-height: 26px;
+          }
+        }
+      }
+    }
+
+    .skill {
+      border: solid 1px black;
+      margin: 0 40px 30px;
+
+      &__title {
+        padding: 20px 20px 0;
+        text-align: left;
+        font-size: 19px;
+        letter-spacing: 8px;
+
+        br {
+          display: none;
+        }
+      }
+
+      &__box {
+        padding: 20px;
+        display: inline-block;
+        //flot使用時、親要素に記述すると、flotされた子要素を全て包むように伸びてくれる
+
+        li {
+          float: left;
+          padding: 20px;
+          font-size: 18px;
+          letter-spacing: 5px;
+          width: calc(100% / 5 - (40px));
+        }
+      }
+    }
+  }
+
+  // --------------------------------------------------------------------
+
+  .portfolio-wrapper {
+    clear: both;
+    background-color: rgb(20, 20, 20);
+    width: 100%;
+    text-align: center;
+    height: 800px;
+    
+    h2 {
+      color: whitesmoke;
+      padding: 50px 0;
+    }
+
+    .portfolio {
+      width: 76%;
+      margin: 0 auto 50px;
+
+      &__box {
+        border-bottom: solid 0.05rem rgba(245, 245, 245, 0.5);
+        padding: 30px 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        text-align: left;
+        transition: .9s;  //遷移（変化）スピードの変更 ＊変更元に記述
+
+        img {
+          height: 200px;
+        }
+
+        &__text {
+          color: rgb(245, 245, 245);
+          margin-left: 30px;
+          height: 160px;
+
+          h3 {
+            opacity: 0.8;
+            font-size: 13px;
+            line-height: 25px;
+            letter-spacing: 3.2px;
+          }
+
+          p {
+            margin-top: 16px;
+            font-size: 16px;
+            line-height: 35px;
+            letter-spacing: 3.6px;
+            height: 70px;
+          }
+        }
+      }
+    }
+  }
+
+// --------------------------------------------------------------------
+  .footer {
+    text-align: center;
+    color: whitesmoke;
+    padding-top: 120px;
+    background-color: black;
+
+    h2 {
+      font-size: 28px;
+      letter-spacing: 8px;
+    }
+
+    p {
+      margin-top: 24px;
+      font-size: 14px;
+      letter-spacing: 4px;
+    }
+
+    .fotter__sns {
+      margin-top: 60px;
+
+      a {
+        margin: 0 15px;
+      }
+
+    }
+    small {
+      font-size: 3px;
+      margin-top: 48px;
+      display: block;
+      height: 70px;
+      width: 100%;
+      background-color: rgb(20, 20, 20);
+      line-height: 71px;
+      letter-spacing: 1.9px;
+    }
+  }
+}
+
+
+
+// スマホ用のCSS⬇︎--------------------------------------------------------------
+
+// スマホだけのCSSをつくるにメディアクエリを追加します。
+// max-device-width は「デバイスの画面の幅が480以下だったら」という意味です。
+// スマホであればこの条件に当てはまります
+// なのでこの中に書いたCSSは全てスマホ用のCSSになり、PCのときは適応されません。
+
+@media only screen and (max-device-width: 480px) {
+  .wrapper {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;  //paddingとboderを幅と高さを含める
+    background-color: whitesmoke;
+    text-align: center;
+  
+    .top__move__header {
+      position: fixed;  //スクロールしても位置が固定
+      z-index: 100;
+      height: 110px;
+      width: 100%;
+      background: linear-gradient(rgba(255, 255, 255, .9), rgba(255, 255, 255, .4), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+      // 背景にグラデーションをつける（複数可）
+  
+      .header__link {
+        position: fixed;  //スクロールしても位置が固定
+        z-index: 3;
+        right: 0;
+        right: 0;
+        top: 40px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+  
+        span {
+          display: block;
+          height: 30px;
+          width: 1px;
+          background: #505050;
+        }
+  
+        &__item {
+          position: relative;
+          z-index: 5;
+          margin: 0 20px;
+          height: 100%;
+          text-align: center;
+          letter-spacing: 2.1px;
+          font-size: 13px;
+          cursor: pointer;
+          transition: all 0.5s;
+  
+          a {
+            display: block;
+            height: 100%;
+            width: 100%;
+            padding: 26px 0 15px;
+  
+            .fa {
+              font-size: 1rem;
+              position: absolute;
+              left: 0;
+              right: 0;
+              margin: auto;
+              top: 8px;
+            }
+          }
+        }
+  
+        &__item:hover {
+          background: rgba(110, 110, 110, 0.3);
+        }
+      }
+    }
+  
+    // --------------------------------------------------------------------
+  
+    .top-wrapper {
+    
+      img {
+        width: 100%;
+        height: 100vh;
+        opacity: 0.5;
+        position: relative;
+      }
+  
+      .top__section__text {
+        position: absolute;
+        margin: 0;
+        top: 50vh;
+        left: 0;
+        right: 0;
+        padding: 10px;
+        text-align: center;
+
+        //  pc版より 0.7x
+        h1 {
+          font-size: 28px;
+          letter-spacing: 9.1px;  //文字の間隔を指定
+        }
+        //  pc版より 0.7x
+        p {
+          font-size: 11.2px;
+          letter-spacing: 3.5px;  //文字の間隔を指定
+          margin-top: 25px;
+        }
+      }
+    }
+  
+    // --------------------------------------------------------------------
+  
+    .introductio-wrapper {
+      background-color: whitesmoke;
+      width: 100%;
+      margin: 0 auto 50px;
+      text-align: center;
+  
+      .profile {
+        display: block;
+  
+  
+        &__text-jp {
+          margin: 0 auto;
+          writing-mode: vertical-rl;
+          text-align: left;
+          padding: 20px;
+
+          
+          //  pc版より 0.7x
+          h3 {
+            line-height: 40.6px;  // *文字の x 2
+            font-size: 20.3px;
+            letter-spacing: 0.7px;  //文字の間隔を指定  *文字の1/3
+          }
+          //  pc版より 0.7x
+          p {
+            line-height: 25.2px;
+            font-size: 13.3px;
+            letter-spacing: 0.7px;  //文字の間隔を指定
+          }
+        }
+  
+        &__box {
+          padding: 20px;
+        
+          &__image {
+            height: auto;
+
+            img {
+              width: 100%;
+            }
+          }
+  
+          &__text-eng {
+            padding-top: 20px;
+            font-size: 13px;
+            letter-spacing: 0.1rem;
+            opacity: .5;
+  
+            h3 {
+              line-height: 52px;
+            }
+  
+            p {
+              line-height: 26px;
+            }
+          }
+        }
+      }
+    }
+  
+    // --------------------------------------------------------------------
+  
+    .proguramming-wrapper {
+      width: 100%;
+  
+      .proguramming {
+        display: block;
+        margin: 0 auto 50px;
+  
+        &__image {
+          height: auto;
+          padding: 20px;
+  
+          img {
+            width: 100%;
+          }
+        }
+  
+        .proguramming__text {
+          padding: 20px;
+  
+          &__jp {
+            text-align: left;
+            
+  
+            //  pc版より 0.7x
+            h3 {
+              line-height: 40.6px;  // *文字の x 2
+              font-size: 20.3px;
+              letter-spacing: 0.7px;  //文字の間隔を指定  *文字の1/3
+            }
+            //  pc版より 0.7x
+            p {
+              line-height: 25.2px;
+              font-size: 13.3px;
+              letter-spacing: 0.7px;  //文字の間隔を指定
+            }
+          }
+  
+          &__eng {
+            text-align: left;
+            padding-top: 20px;
+            font-size: 13px;
+            letter-spacing: 2px;  //文字の間隔を指定
+            opacity: .5;
+  
+            h3 {
+              line-height: 52px;
+            }
+  
+            p {
+              line-height: 26px;
+            }
+          }
+        }
+      }
+  
+      .skill {
+        border: solid 1px black;
+        margin: 0 20px 30px;
+  
+        &__title {
+          padding: 20px 0;
+          font-size: 19px;
+          letter-spacing: 8px;
+          text-align: center;
+
+          br {
+            display: inline;
+          }
+        }
+  
+        &__box {
+          padding: 20px;
+          text-align: center;
+  
+          li {
+            clear: both;
+            padding-top: 20px;
+            font-size: 18px;
+            letter-spacing: 5px;
+          }
+        }
+      }
+    }
+  
+    // --------------------------------------------------------------------
+  
+    .portfolio-wrapper {
+      background-color: rgb(20, 20, 20);
+      width: 100%;
+      height: 1100px;
+      text-align: center;
+      
+      h2 {
+        color: whitesmoke;
+        padding: 50px 0;
+      }
+  
+      .portfolio {
+        margin: 0 auto 50px;
+  
+        &__box {
+          display: inline-block;
+          border-bottom: solid 0.05rem rgba(245, 245, 245, 0.5);
+          padding: 30px 0;
+          width: 100%;
+          transition: .9s;  //遷移（変化）スピードの変更 ＊変更元に記述
+  
+          img {
+            width: 100%;
+            height: 200px;
+          }
+  
+          &__text {
+            color: rgb(245, 245, 245);
+            margin: 0 auto;
+  
+            h3 {
+              opacity: 0.8;
+              font-size: 13px;
+              line-height: 25px;
+              letter-spacing: 3.2px;
+            }
+  
+            p {
+              margin-top: 16px;
+              font-size: 16px;
+              line-height: 35px;
+              letter-spacing: 3.6px;
+            }
+          }
+        }
+      }
+    }
+  
+  // --------------------------------------------------------------------
+    .footer {
+      z-index: 3;
+      text-align: center;
+      color: whitesmoke;
+      padding-top: 120px;
+      background-color: black;
+  
+      //  pc版より 0.5x
+      h2 {
+        font-size: 14px;
+        letter-spacing: 4px;
+      }
+  
+      p {
+        margin-top: 24px;
+        font-size: 14px;
+        letter-spacing: 4px;
+      }
+  
+      .fotter__sns {
+        margin-top: 60px;
+  
+        a {
+          margin: 0 15px;
+        }
+  
+      }
+      small {
+        font-size: 3px;
+        margin-top: 48px;
+        display: block;
+        height: 70px;
+        width: 100%;
+        background-color: rgb(20, 20, 20);
+        line-height: 71px;
+        letter-spacing: 1.9px;
+      }
+    }
+  }
+}
