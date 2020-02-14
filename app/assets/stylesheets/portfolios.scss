@@ -102,17 +102,17 @@ a {
   // --------------------------------------------------------------------
 
   .top-wrapper {
+    position: relative;
   
     img {
       width: 100%;
-      height: 100vh;
+      height: 100%;
       opacity: 0.5;
-      position: relative;
     }
 
     .top__section__text {
       position: absolute;
-      top: 50vh;
+      top: 50%;
       margin-left: 10%;
       padding: 10px;
 
@@ -158,6 +158,7 @@ a {
     text-align: center;
 
     .profile {
+
       display: inline-flex;
 
       @include sp {
@@ -165,8 +166,6 @@ a {
       }
 
       &__text-jp {
-        -ms-writing-mode: tb-rl;
-        -webkit-writing-mode: vertical-rl;
         writing-mode: vertical-rl;
         text-align: left;
         padding: 20px;
@@ -200,6 +199,7 @@ a {
             letter-spacing: 0.7px;  //文字の間隔を指定
           }
         }
+
       }
 
       &__box {
@@ -251,11 +251,11 @@ a {
 
   .proguramming-wrapper {
     width: 100%;
+    margin: 0 auto 50px;
     text-align: center;
 
     .proguramming {
       display: inline-flex;
-      margin: 0 auto 50px;
 
       @include sp {
         display: block;
