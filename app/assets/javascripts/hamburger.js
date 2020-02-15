@@ -1,15 +1,15 @@
 $(document).on('turbolinks:load', function(){
   $(function(){
-    $(document).on("click", "#menu_link", function() {
+    $('#menu_link').click(function(){
       $('.icon_link_tab').addClass('open');
     });
-    $(document).on("click", ".close_btn", function() {
+    $('.close_btn').click(function(){
       $('.icon_link_tab').removeClass('open');
     });
   });
 
   $(function(){
-    $(document).on("click", "a[href^=#]", function() {
+    $('a[href^=#]').click(function() {
       $('.icon_link_tab').removeClass('open');
     });
   });
