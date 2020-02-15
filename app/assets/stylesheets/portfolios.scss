@@ -70,9 +70,6 @@ a {
 
       .pc-non {
         display: none;
-        @include sp {
-          display: block;
-        }
       }
 
       &__item {
